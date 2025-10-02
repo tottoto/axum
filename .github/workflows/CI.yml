@@ -60,6 +60,8 @@ jobs:
         curl -LsSf https://github.com/taiki-e/cargo-hack/releases/latest/download/cargo-hack-x86_64-unknown-linux-gnu.tar.gz | tar xzf - -C ~/.cargo/bin
     - name: cargo hack check
       run: cargo hack check --each-feature --no-dev-deps --all
+    - name: check axum-extra typed-routing feature
+      run: cargo check --package axum-extra --features routing,typed-routing
 
   cargo-public-api-crates:
     runs-on: ubuntu-24.04
